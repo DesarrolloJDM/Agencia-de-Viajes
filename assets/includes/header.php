@@ -85,8 +85,9 @@ Code Start From Here
                         Ofertas
                     </a>
                     <ul class="sub-menu">
+                        <li><a href="#">Super Promos! 🔥🔥</a></li>
                         <li><a href="#">Nacional</a></li>
-                        <li><a href="#">Super Promos</a></li>
+                        <li><a href="#">Internacional</a></li>
                     </ul>
                 </li>
                 <li>
@@ -133,8 +134,8 @@ Code Start From Here
                     <div class="header-social">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
             </div>
@@ -174,6 +175,7 @@ Code Start From Here
                                         Ofertas
                                     </a>
                                     <ul class="sub-menu">
+                                        <li><a href="#">Super Promos! 🔥🔥</a></li>
                                         <li><a href="#">Nacional</a></li>
                                         <li><a href="#">Internacional</a></li>
                                     </ul>

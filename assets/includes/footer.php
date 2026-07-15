@@ -18,8 +18,8 @@
               <div class="social-style1">
                 <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-pinterest-p"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fab fa-whatsapp"></i></a>
+                <!-- <a href="#" target="_blank"><i class="fab fa-twitter"></i></a> -->
               </div>
             </div>
           </div>
