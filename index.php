@@ -112,7 +112,7 @@
           <img class="img1" src="assets/images/nosotros-1.png" alt="image1">
           <img class="img2" src="assets/images/nosotros-2.png" alt="image2">
           <div class="media-box1">
-            <span class="media-info">5 Años</span>
+            <span class="media-info">7 Años</span>
             <p class="media-text">De Experiencia</p>
           </div>
           <div class="media-box2">

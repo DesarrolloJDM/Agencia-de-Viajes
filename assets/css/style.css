@@ -53,8 +53,8 @@ Version: 1.0.0
 /*------------------- 1.2. Function -------------------*/
 /*------------------- 1.3. Variable-------------------*/
 :root {
-  --theme-color: #ff681a;
-  --theme-color2: #37d4d9;
+  --theme-color: #37d4d9;
+  --theme-color2: #ff681a;
   --secondary-color: #111330;
   --title-color: #1c1c1c;
   --body-color: #505050;
@@ -6342,7 +6342,7 @@ Header Customization
   top: -55px;
 }
 .image-box1 .media-box2 {
-  background-color: var(--theme-color2);
+  background-color: var(--theme-color);
   bottom: -55px;
   top: unset;
   right: 125px;

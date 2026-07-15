@@ -86,7 +86,7 @@ Code Start From Here
                     </a>
                     <ul class="sub-menu">
                         <li><a href="#">Nacional</a></li>
-                        <li><a href="#">Internacional</a></li>
+                        <li><a href="#">Super Promos</a></li>
                     </ul>
                 </li>
                 <li>
