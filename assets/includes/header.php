@@ -3,49 +3,82 @@
     $email = "correo@correo.com";
     $phone = "+521234567891";
     $logo = "assets/images/logo.png";
+    $facebook = "";
+    $instagram = "";
+    $whatsapp = "";
+    $tiktok = "";
 ?>
 
 <!DOCTYPE html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="es-MX">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title><?php echo $title; ?> - Agencia de Viajes</title>
-  <meta name="author" content="vecuro">
-  <meta name="description" content="<?php echo $title; ?> -  Agencia de Viajes">
-  <meta name="keywords" content="<?php echo $title; ?> -  Agencia de Viajes">
-  <meta name="robots" content="INDEX,FOLLOW">
+    <!-- Meta Básico -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <!-- Título principal -->
+    <title><?php echo $title; ?> - Agencia de Viajes</title>
 
-  <!-- Mobile Specific Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- SEO Básico -->
+    <meta 
+        name="description" 
+        content="Agencia de viajes especializada en paquetes nacionales e internacionales. En Viaja Tus Sueños te ayudamos a planear vacaciones, escapadas y experiencias inolvidables."
+    >
+    <meta 
+        name="keywords" 
+        content="agencia de viajes, paquetes de viaje, viajes nacionales, viajes internacionales, vacaciones familiares, viajes a la playa, viajes a Canadá, viajes a Europa, destinos turísticos, paquetes vacacionales, viajes personalizados, asesoría de viajes, Viaja Tus Sueños, reservar viajes, viajes para parejas, viajes todo incluido"
+    >      
+    <meta name="author" content="Viaja tus Suenos">
+    <meta name="robots" content="index, follow">
 
-  <!-- Favicons - Place favicon.ico in the root directory -->
-  <!-- <link rel="icon" type="image/png" href="assets/img/favicons/favicon.png"> -->
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" content="#ffffff">
+    <!-- URL principal de la página -->
+    <link rel="canonical" href="https://viajatussuenos.com/">
 
-  <!--==============================
-      Google Fonts
-  ============================== -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Open Graph: WhatsApp, Facebook, LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Viaja Tus Sueños | Agencia de viajes">
+    <meta 
+        property="og:description" 
+        content="Planea tus próximas vacaciones con Viaja Tus Sueños. Encuentra paquetes nacionales e internacionales, asesoría personalizada y destinos inolvidables."
+    >
+    <meta property="og:url" content="https://viajatussuenos.com/">
+    <meta property="og:site_name" content="Viaja tus Suenos">
+    <!-- <meta property="og:image" content="https://viajatussuenos.com/assets/img/og-image.png"> -->
+    <meta property="og:image:alt" content="Viaja Tus Sueños - Agencia de viajes y paquetes vacacionales">
+	
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/favicon.png">  
 
-  <!--==============================
-        All CSS File
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicons - Place favicon.ico in the root directory -->
+    <!-- <link rel="icon" type="image/png" href="assets/img/favicons/favicon.png"> -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <!--==============================
+        Google Fonts
     ============================== -->
-  <!-- Bootstrap -->
-  <!-- <link rel="stylesheet" href="assets/css/app.min.css"> -->
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <!-- Fontawesome Icon -->
-  <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-  <!-- Magnific Popup -->
-  <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
-  <!-- Slick Slider -->
-  <link rel="stylesheet" href="assets/css/slick.min.css">
-  <!-- Theme Custom CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!--==============================
+            All CSS File
+        ============================== -->
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="assets/css/app.min.css"> -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Fontawesome Icon -->
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <!-- Slick Slider -->
+    <link rel="stylesheet" href="assets/css/slick.min.css">
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
