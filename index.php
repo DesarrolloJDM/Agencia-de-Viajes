@@ -5,7 +5,7 @@
 <!--==============================
   Hero Area Start 
 ==============================-->
-<section class="hero-layout" data-bg-src="assets/img/banner/banner-bg-1.png">
+<section class="hero-layout" data-bg-src="assets/images/banner-bg.png">
   <div class="hero-mask">
     <div class="vs-carousel" id="hero-slider" data-slide-show="1" autoplay="false">
       <div class="hero-slide">
@@ -240,10 +240,10 @@
 ==============================-->
 <div class="space-top space-extra-bottom blog-wrapper1 shape-mockup-wrap">
   <div class="shape-mockup d-none d-xl-block spin z-index-negative" data-top="-5%" data-left="-5%">
-    <img src="assets/img/shape/circle1.png" alt="circle">
+    <img src="assets/images/circle1.png" alt="circle">
   </div>
   <div class="shape-mockup d-none d-xl-block jump z-index-negative" data-bottom="5%" data-right="5%">
-    <img src="assets/img/shape/Dot.png" alt="Dots">
+    <img src="assets/images/dot.png" alt="Dots">
   </div>
   <div class="container">
     <div class="row justify-content-center text-center">
@@ -259,7 +259,7 @@
         <img src="assets/images/tips-1.png" alt="blog image">
         <div class="category-tag"><a href="#"><i class="fas fa-tag"></i> Tips</a></div>
       </div>
-      <div class="blog-content" data-bg-src="assets/img/shape/blog-bg.png">
+      <div class="blog-content" data-bg-src="assets/images/blog-bg.png">
         <a class="blog-date" href="#"><i class="far fa-calendar-alt "></i> 
           Julio 21, 2026
         </a>
@@ -280,7 +280,7 @@
         <img src="assets/images/tips-2.png" alt="blog image">
         <div class="category-tag"><a href="#"><i class="fas fa-tag"></i> Tips</a></div>
       </div>
-      <div class="blog-content" data-bg-src="assets/img/shape/blog-bg.png">
+      <div class="blog-content" data-bg-src="assets/images/blog-bg.png">
         <a class="blog-date" href="#"><i class="far fa-calendar-alt "></i> 
           Julio 21, 2026
         </a>
@@ -305,15 +305,15 @@
 <!--==============================
     Tour Package Area Start 
   ==============================-->
-<section class="space bg-light shape-mockup-wrap" data-bg-src="assets/img/shape/Bg.png">
+<section class="space bg-light shape-mockup-wrap" data-bg-src="assets/images/bg.png">
   <div class="shape-mockup d-none d-xl-block jump z-index-negative" data-bottom="20%" data-left="5%">
-    <img src="assets/img/shape/Dot.png" alt="Dots">
+    <img src="assets/images/dot.png" alt="Dots">
   </div>
   <div class="shape-mockup d-none d-xl-block spin z-index-negative" data-bottom="-5%" data-right="-5%">
-    <img src="assets/img/shape/circle1.png" alt="Circle">
+    <img src="assets/images/circle1.png" alt="Circle">
   </div>
   <div class="shape-mockup d-none d-xl-block ripple-animation z-index-negative" data-top="10%" data-left="10%">
-    <img src="assets/img/shape/Plane.png" alt="plane">
+    <img src="assets/images/plane.png" alt="plane">
   </div>
   <div class="container ">
     <div class="row justify-content-center text-center">
@@ -489,12 +489,12 @@
 <!--==============================
     Destiniations Area Start 
 ==============================-->
-<section class="space space-extra-bottom bg-light shape-mockup-wrap" data-bg-src="assets/img/shape/Bg.png">
+<section class="space space-extra-bottom bg-light shape-mockup-wrap" data-bg-src="assets/images/bg.png">
   <div class="shape-mockup d-none d-xl-block spin z-index-negative" data-top="-20%" data-right="-8%">
-    <img src="assets/img/shape/circle1.png" alt="circle">
+    <img src="assets/images/circle1.png" alt="circle">
   </div>
   <div class="shape-mockup d-none d-xl-block  z-index-negative" data-bottom="13%" data-left="0%">
-    <img src="assets/img/shape/walk.png" alt="circle">
+    
   </div>
   <div class="container">
     <div class="row justify-content-between align-items-center">

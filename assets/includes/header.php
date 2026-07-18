@@ -1,12 +1,13 @@
 <?php
     $title = "Viaja tus Sueños";
     $email = "correo@correo.com";
-    $phone = "+521234567891";
+    $phone = "(449) 142-9172";
+    $phone_link = "+524491429172";
     $logo = "assets/images/logo.png";
-    $facebook = "";
-    $instagram = "";
+    $facebook = "https://www.facebook.com/profile.php?id=100063464355506";
+    $instagram = "https://www.instagram.com/viaja_tus_suenos/";
     $whatsapp = "";
-    $tiktok = "";
+    $tiktok = "https://www.tiktok.com/tag/viajatussue%C3%B1os";
 ?>
 
 <!DOCTYPE html>
@@ -79,6 +80,7 @@
     <link rel="stylesheet" href="assets/css/slick.min.css">
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 
 <body>
@@ -157,7 +159,7 @@ Code Start From Here
                             </a>
                         </li>
                         <li><i class="fas fa-phone-alt"></i> 
-                            <a href="tel:<?php echo $phone; ?>">
+                            <a href="tel:<?php echo $phone_link; ?>">
                                 <?php echo $phone; ?>
                             </a>
                         </li>
@@ -165,10 +167,18 @@ Code Start From Here
                 </div>
                 <div class="col-auto">
                     <div class="header-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="<?php echo $facebook; ?>" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="<?php echo $instagram; ?>" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="<?php echo $tiktok; ?>" target="_blank">
+                            <img width="50" height="50" src="https://img.icons8.com/ios/50/tiktok--v1.png" alt="tiktok--v1"/>
+                        </a>
                     </div>
                 </div>
             </div>
