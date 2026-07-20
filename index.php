@@ -297,6 +297,9 @@
       </div>
     </div>
   </div>
+  <div class="container justify-content-center text-center">
+    <a class="vs-btn" href="reviews.php">Ver Reseñas</a>
+  </div>
 </div>
 <!--==============================
   About Blog Area End 

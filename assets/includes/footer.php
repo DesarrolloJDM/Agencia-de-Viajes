@@ -9,7 +9,7 @@
           <div class="widget footer-widget">
             <div class="vs-widget-about">
               <div class="footer-logo">
-                <a href="index.html"><img src="<?php echo $logo; ?>" alt="Travolo" class="logo" /></a>
+                <a href="index.php"><img src="<?php echo $logo; ?>" alt="Travolo" class="logo" /></a>
               </div>
               <p class="footer-text">
                 En Viaja Tus Sueños creemos que cada viaje comienza con una ilusión. Por eso, te ayudamos a 

@@ -120,7 +120,7 @@ Code Start From Here
                         Ofertas
                     </a>
                     <ul class="sub-menu">
-                        <li><a href="#">Super Promos! 🔥🔥</a></li>
+                        <li><a href="promos.php">Super Promos! 🔥🔥</a></li>
                         <li><a href="#">Nacional</a></li>
                         <li><a href="#">Internacional</a></li>
                     </ul>
@@ -190,7 +190,7 @@ Code Start From Here
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto">
                         <div class="vs-logo">
-                            <a href="index.html">
+                            <a href="index.php">
                                 <img src="<?php echo $logo; ?>" alt="logo">
                             </a>
                         </div>
@@ -218,7 +218,7 @@ Code Start From Here
                                         Ofertas
                                     </a>
                                     <ul class="sub-menu">
-                                        <li><a href="#">Super Promos! 🔥🔥</a></li>
+                                        <li><a href="promos.php">Super Promos! 🔥🔥</a></li>
                                         <li><a href="#">Nacional</a></li>
                                         <li><a href="#">Internacional</a></li>
                                     </ul>
