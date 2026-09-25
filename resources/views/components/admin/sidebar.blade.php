@@ -28,7 +28,7 @@
         {{-- Seccion Dashboard Inicio --}}
         <li class="nav-item">
           <a 
-            href="{{ route('dashboard') }}" 
+            href="{{ route('admin.dashboard') }}" 
             class="nav-link active"
           >
             <i class="nav-icon bi bi-speedometer"></i>
