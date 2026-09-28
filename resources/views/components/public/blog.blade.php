@@ -72,7 +72,7 @@
         </div>
     </div>
     <div class="container justify-content-center text-center">
-        <a class="vs-btn" href="reviews.php">
+        <a class="vs-btn" href="{{ route('review') }}">
             Ver Reseñas
         </a>
     </div>

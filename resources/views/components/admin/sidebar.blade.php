@@ -2,7 +2,7 @@
   
   {{-- Inicio Marca --}}
   <div class="sidebar-brand">
-    <a href="./index.html" class="brand-link">
+    <a href="{{ route('home') }}" class="brand-link">
       <img
         src="{{ asset('images/admin/logo.png') }}"
         alt="Viaja tus Suenos Logo"
@@ -102,7 +102,7 @@
         {{-- Seccion Usuarios Inicio --}}
         <li class="nav-item">
           <a 
-            href="{{ route('admin.users.index') }}" 
+            href="{{ route('users') }}" 
             class="nav-link"
           >
             <i class="nav-icon bi bi-people-fill"></i>
@@ -119,7 +119,7 @@
       {{-- Inicio Ver Pagina --}}
       <div class="p-3 mt-3 border-top border-secondary border-opacity-25">
         <a
-          href="#"
+          href="{{ route('home') }}"
           class="btn btn-sm btn-outline-light w-100 d-flex align-items-center justify-content-center gap-2"
         >
           <i class="bi bi-eye-fill" aria-hidden="true"></i>

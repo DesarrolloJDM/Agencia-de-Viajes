@@ -9,7 +9,7 @@
                     <div class="widget footer-widget">
                         <div class="vs-widget-about">
                             <div class="footer-logo">
-                                <a href="index.php">
+                                <a href="{{ route('home') }}">
                                     <img 
                                         src="{{ asset('images/logo.png') }}" 
                                         alt="Logo" 
@@ -45,12 +45,12 @@
                         <div class="menu-all-pages-container">
                             <ul class="menu">
                                 <li>
-                                    <a href="index.php"><i class="far fa-angle-right"></i> 
+                                    <a href="{{ route('home') }}"><i class="far fa-angle-right"></i> 
                                         Inicio
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="far fa-angle-right"></i> 
+                                    <a href="{{ route('review') }}"><i class="far fa-angle-right"></i> 
                                         Nosotros
                                     </a>
                                 </li>
@@ -82,7 +82,7 @@
                 <div class="col-lg-auto">
                     <p class="copyright-text">Copyright <i class="fal fa-copyright"></i>
                         <?php echo date('Y'); ?>
-                        <a href="index.php">
+                        <a href="{{ route('home') }}">
                             Viaja tus Sueños
                         </a>.
                         Desarrollada por

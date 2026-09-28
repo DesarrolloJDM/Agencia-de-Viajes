@@ -2,12 +2,12 @@
     <div class="vs-menu-area text-center">
         <button class="vs-menu-toggle"><i class="fal fa-times"></i></button>
         <div class="mobile-logo">
-            <a href="#"><img src="{{ asset('images/logo.png') }}" alt="logo"></a>
+            <a href={{ route('home') }}><img src="{{ asset('images/logo.png') }}" alt="logo"></a>
         </div>
         <div class="vs-mobile-menu">
             <ul>
                 <li class="menu-item-has-children">
-                    <a href="index.php">
+                    <a href={{ route('home') }}>
                         Inicio
                     </a>
                 </li>
@@ -15,6 +15,9 @@
                     <a href="#">
                         Nosotros
                     </a>
+                    <ul class="sub-menu">
+                        <li><a href="{{ route('review') }}">Reseñas</a></li>
+                    </ul>
                 </li>
                 <li class="menu-item-has-children">
                     <a href="#">
@@ -34,6 +37,9 @@
                 <li>
                     <a href="#">Contacto</a>
                 </li>
+                <li>
+                    <a href="{{ route('login') }}">Iniciar Sesión</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -46,20 +52,25 @@
                 <div class="col d-none d-lg-block">
                     <ul class="header-contact">
                         <li><i class="fas fa-envelope"></i> 
-                            <a href="#">
+                            <a href="mailto:correo@correo.com">
                                 correo@correo
                             </a>
                         </li>
                         <li><i class="fas fa-phone-alt"></i> 
-                            <a href="#">
-                                1234567891
+                            <a href="tel:+4491429172">
+                                4491429172
+                            </a>
+                        </li>
+                        <li><i class="fas fa-phone-alt"></i> 
+                            <a href="tel:+4491960885">
+                                4491960885
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-auto">
                     <div class="header-social">
-                        <a href="#" target="_blank">
+                        <a href="https://www.facebook.com/Viaja-tus-sueños" target="_blank">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                         <a href="#" target="_blank">
@@ -82,7 +93,7 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto">
                         <div class="vs-logo">
-                            <a href="#">
+                            <a href={{ route('home') }}>
                                 <img src="{{ asset('images/logo.png') }}" alt="logo">
                             </a>
                         </div>
@@ -91,7 +102,7 @@
                         <nav class="main-menu  menu-style1 d-none d-lg-block">
                             <ul>
                                 <li class="menu-item-has-children">
-                                    <a href="#">
+                                    <a href={{ route('home') }}>
                                         Inicio
                                     </a>
                                 </li>
@@ -99,6 +110,9 @@
                                     <a href="#">
                                         Nosotros
                                     </a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{{ route('review') }}">Reseñas</a></li>
+                                    </ul>
                                 </li>
                                 <li class="menu-item-has-children mega-menu-wrap">
                                     <a href="#">
@@ -117,6 +131,9 @@
                                 </li>
                                 <li>
                                     <a href="#">Contacto</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('login') }}">Iniciar Sesión</a>
                                 </li>
                             </ul>
                         </nav>

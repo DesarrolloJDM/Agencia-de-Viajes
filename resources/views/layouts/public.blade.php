@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         {{-- Titulo Principal --}}
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'Viaja Tus Sueños') }}</title>
 
         {{-- SEO Básico --}}
         <meta 

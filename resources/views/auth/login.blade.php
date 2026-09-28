@@ -5,7 +5,7 @@
     <div class="card">
         <div class="card-body login-card-body">
             <h3 class="login-box-msg">
-                Viaja tus Sueños
+                <a href="{{ route('home') }}">Viaja tus Sueños</a>
             </h3>
 
             @if ($errors->any())

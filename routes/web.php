@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Public\UserReviewController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -41,3 +42,8 @@ Route::get('/admin/configuracion', function(){
     return view('admin.settings');
 })->name('settings');
 
+Route::get('/admin/usuarios', function(){
+    return view('admin.users');
+})->name('users');
+
+Route::get('/reviews', [UserReviewController::class, 'index'])->name('review');
