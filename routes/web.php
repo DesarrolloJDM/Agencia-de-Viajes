@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +16,14 @@ Route::post('/logout', [LoginController::class, 'destroy'])->middleware('auth')-
 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function(){
     Route::view('/dashboard', 'admin.dashboard')->name('dashboard');
+    Route::resource('usuarios', UserController::class)->parameters([
+        'usuarios' => 'user',
+    ])->names('users');
 });
+
+// Route::get('/admin/usuarios', function(){
+//     return view('admin.users');
+// })->name('users');
 
 // Route::get('/login', function(){
 //     return view('auth.login');
@@ -33,6 +41,3 @@ Route::get('/admin/configuracion', function(){
     return view('admin.settings');
 })->name('settings');
 
-Route::get('/admin/usuarios', function(){
-    return view('admin.users');
-})->name('users');

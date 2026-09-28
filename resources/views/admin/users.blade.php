@@ -53,8 +53,7 @@
                       </tr>
                     </thead>
                     <tbody>
-
-                      {{-- Inicio Usuario 1 --}}
+                      @forelse ($users as $user)
                       <tr>
                         <td>
                           <div class="d-flex align-items-center">
@@ -63,25 +62,47 @@
                               alt=""
                               class="img-size-32 rounded-circle me-2"
                             />
-                            <span class="fw-medium">
-                              Tony Stark
+                            <span class="fw-medium text-capitalize">
+                              {{ $user->full_name }}
                             </span>
                           </div>
                         </td>
                         <td>
-                          correo@correo.com
+                          {{ $user->email }}
                         </td>
                         <td>
-                          <span class="badge text-bg-primary"> 
-                            Admin
+                          <span
+                            class="badge text-capitalize {{
+                              $user->role === \App\Enums\UserRole::Admin
+                              ? 'text-bg-primary'
+                              : 'text-bg-info'
+                            }}"
+                          >
+                            {{
+                              $user->role === \App\Enums\UserRole::Admin
+                              ? 'admin'
+                              : 'usuario'
+                            }}
                           </span>
                         </td>
                         <td>
-                          <span class="badge text-bg-success">
-                            Activo
+                          <span
+                            class="badge {{
+                              $user->status === \App\Enums\UserStatus::Active
+                              ? 'text-bg-success'
+                              : 'text-bg-warning'
+                            }}"
+                          >
+                            {{
+                              $user->status === \App\Enums\UserStatus::Active
+                              ? 'Activo'
+                              : 'Suspendido'
+                            }}
                           </span>
                         </td>
-                        <td>Mar 12, 2025</td>
+                        <td>
+                          {{ $user->created_at->format('d/m/Y') }}
+                        </td>
                         <td class="text-end">
                           <div class="btn-group btn-group-sm">
                             <button
@@ -103,104 +124,15 @@
                           </div>
                         </td>
                       </tr>
-                      {{-- Fin Usuario 1 --}}
-
-                      {{-- Inicio Usuario 2 --}}
-                      <tr>
-                        <td>
-                          <div class="d-flex align-items-center">
-                            <img
-                              src="{{ asset('images/admin/usuario.png') }}"
-                              alt=""
-                              class="img-size-32 rounded-circle me-2"
-                            />
-                            <span class="fw-medium">
-                              Amy Lee
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          correo@correo.com
-                        </td>
-                        <td>
-                          <span class="badge text-bg-info">Usuario</span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-success">Activo</span>
-                        </td>
-                        <td>Abr 3, 2025</td>
-                        <td class="text-end">
-                          <div class="btn-group btn-group-sm">
-                            <button
-                              type="button"
-                              class="btn btn-outline-secondary"
-                              aria-label="Edit Sarah Bullock"
-                            >
-                              <i class="bi bi-pencil" aria-hidden="true"> </i>
-                            </button>
-                            <button
-                              type="button"
-                              class="btn btn-outline-danger"
-                              data-bs-toggle="modal"
-                              data-bs-target="#modal-delete-user"
-                              aria-label="Delete Sarah Bullock"
-                            >
-                              <i class="bi bi-trash" aria-hidden="true"> </i>
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                      {{-- Fin Usuario 2 --}}
-
-                      {{-- Inicio Usuario 3 --}}
-                      <tr>
-                        <td>
-                          <div class="d-flex align-items-center">
-                            <img
-                              src="{{ asset('images/admin/usuario.png') }}"
-                              alt=""
-                              class="img-size-32 rounded-circle me-2"
-                            />
-                            <span class="fw-medium">
-                              Alice Cooper
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          correo@correo.com
-                        </td>
-                        <td>
-                          <span class="badge text-bg-info">
-                            Usuario
-                          </span>
-                        </td>
-                        <td>
-                          <span class="badge text-bg-warning">Suspendido</span>
-                        </td>
-                        <td>Abr 28, 2025</td>
-                        <td class="text-end">
-                          <div class="btn-group btn-group-sm">
-                            <button
-                              type="button"
-                              class="btn btn-outline-secondary"
-                              aria-label="Edit Daniel Cooper"
-                            >
-                              <i class="bi bi-pencil" aria-hidden="true"> </i>
-                            </button>
-                            <button
-                              type="button"
-                              class="btn btn-outline-danger"
-                              data-bs-toggle="modal"
-                              data-bs-target="#modal-delete-user"
-                              aria-label="Delete Daniel Cooper"
-                            >
-                              <i class="bi bi-trash" aria-hidden="true"> </i>
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                      {{-- Fin Usuario 3 --}}
                       
+                      @empty
+                      <tr>
+                        <td colspan="6" class="text-center py-4 text-secondary">
+                          No hay usuarios registrados.
+                        </td>
+                      </tr>
+                      @endforelse
+
                     </tbody>
                   </table>
                 </div>

@@ -78,8 +78,10 @@
             class="user-image rounded-circle shadow"
             alt="Imagen Usuario"
           />
-          <span class="d-none d-md-inline">
-            Tony Stark
+          <span class="d-none d-md-inline text-capitalize">
+            @auth
+              {{ auth()->user()->full_name }}
+            @endauth
           </span>
         </a>
       </li>
