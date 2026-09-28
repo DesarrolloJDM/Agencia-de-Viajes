@@ -1,0 +1,10 @@
+import './vendor/jquery-3.6.0.min.js';
+import './slick.min.js';
+import './bootstrap.min.js';
+import './jquery.magnific-popup.min.js';
+import './jquery-ui.min.js';
+import './circle-progress.min.js';
+import './imagesLoaded.js';
+import './isotope.js';
+import './wow.min.js';
+import './main.js';
