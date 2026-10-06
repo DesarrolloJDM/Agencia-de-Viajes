@@ -34,6 +34,10 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function(){
 //     return view('admin.dashboard');
 // })->name('dashboard');
 
+// Route::get('/admin/usuarios', function(){
+//     return view('admin.users');
+// })->name('users');
+
 Route::get('/admin/reseñas', function (){
     return view('admin.reviews');
 })->name('reviews');
@@ -42,8 +46,5 @@ Route::get('/admin/configuracion', function(){
     return view('admin.settings');
 })->name('settings');
 
-Route::get('/admin/usuarios', function(){
-    return view('admin.users');
-})->name('users');
 
 Route::get('/reviews', [UserReviewController::class, 'index'])->name('review');

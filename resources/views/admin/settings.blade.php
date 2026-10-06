@@ -11,7 +11,7 @@
         <div class="container-fluid">
             {{-- Inicio Widgeth --}}
             <div class="row g-3">
-                {{-- Inicio Sidebar --}}
+                {{-- Sidebar Inicio --}}
                 <div class="col-md-3">
                     <div
                         class="list-group list-group-flush nav nav-pills flex-column"
@@ -19,17 +19,17 @@
                         role="tablist"
                     >
                         <a
-                            href="#account"
+                            href="#general"
                             class="list-group-item list-group-item-action active"
                             data-bs-toggle="pill"
                             role="tab"
                             aria-selected="true"
                         >
-                            <i class="bi bi-person me-2" aria-hidden="true"></i>
+                            <i class="bi bi-sliders me-2" aria-hidden="true"></i>
                             General
                         </a>
                         <a
-                            href="#notifications"
+                            href="#social_media"
                             class="list-group-item list-group-item-action"
                             data-bs-toggle="pill"
                             role="tab"
@@ -38,7 +38,7 @@
                             Redes Sociales
                         </a>
                         <a
-                            href="#security"
+                            href="#logo"
                             class="list-group-item list-group-item-action"
                             data-bs-toggle="pill"
                             role="tab"
@@ -48,13 +48,13 @@
                         </a>
                     </div>
                 </div>
-                {{-- Fin Sidebar --}}
+                {{-- Sidebar Fin --}}
 
-                {{-- Inicio Tabla --}}
+                {{-- Tabla Inicio --}}
                 <div class="col-md-9">
                     <div class="tab-content">
                         <!-- Datos Generales -->
-                        <div class="tab-pane fade show active" id="account" role="tabpanel">
+                        <div class="tab-pane fade show active" id="general" role="tabpanel">
                             <div class="card">
                                 <div class="card-header">
                                     <h3 class="card-title">
@@ -62,81 +62,85 @@
                                     </h3>
                                 </div>
                                 <div class="card-body">
-                                    <form class="row g-3">
+                                    <form class="row g-3" method="POST" action="#">
+                                        @csrf
                                         <div class="col-md-6">
-                                            <label class="form-label" for="settings-name"> 
+                                            <label class="form-label" for="email"> 
                                                 Correo Electronico 
                                             </label>
                                             <input
                                                 type="email"
                                                 class="form-control"
-                                                id="settings-email"
+                                                id="email"
+                                                name="email"
                                                 value="correo@correo.com"
                                             />
                                         </div>
                                         <div class="col-md-6">
-                                            <label class="form-label" for="settings-email"> 
+                                            <label class="form-label" for="phone"> 
                                                 Teléfono
                                             </label>
                                             <input
                                                 type="text"
                                                 class="form-control"
-                                                id="settings-email"
+                                                id="phone"
+                                                name="phone"
                                                 value="(656) 123-4567"
                                             />
                                         </div>
                                         <div class="col-md-6">
-                                            <label class="form-label" for="settings-email"> 
+                                            <label class="form-label" for="street"> 
                                                 Calle
                                             </label>
                                             <input
                                                 type="text"
                                                 class="form-control"
-                                                id="settings-email"
+                                                id="street"
+                                                name="street"
                                                 value="Av. Principal"
                                             />
                                         </div>
                                         <div class="col-md-3">
-                                            <label class="form-label" for="settings-email"> 
+                                            <label class="form-label" for="street_number"> 
                                                 Número
                                             </label>
                                             <input
                                                 type="text"
                                                 class="form-control"
-                                                id="settings-email"
+                                                id="street_number"
                                                 value="1234"
                                             />
                                         </div>
                                         <div class="col-md-3">
-                                            <label class="form-label" for="settings-email"> 
+                                            <label class="form-label" for="postal_code"> 
                                                 Código Postal
                                             </label>
                                             <input
                                                 type="text"
                                                 class="form-control"
-                                                id="settings-email"
+                                                id="postal_code"
                                                 value="12345"
                                             />
                                         </div>
                                         <div class="col-md-6">
-                                            <label class="form-label" for="settings-email"> 
+                                            <label class="form-label" for="city"> 
                                                 Ciudad
                                             </label>
                                             <input
                                                 type="text"
                                                 class="form-control"
-                                                id="settings-email"
+                                                id="city"
                                                 value="Ciudad Juárez"
                                             />
                                         </div>
                                         <div class="col-md-6">
-                                            <label class="form-label" for="settings-email"> 
+                                            <label class="form-label" for="state"> 
                                                 Estado
                                             </label>
                                             <input
                                                 type="text"
                                                 class="form-control"
-                                                id="settings-email"
+                                                id="state"
                                                 value="Chihuahua"
                                             />
                                         </div>
@@ -151,7 +155,8 @@
                         </div>
 
                         <!-- Redes Sociales -->
-                        <div class="tab-pane fade" id="notifications" role="tabpanel">
+                        <div class="tab-pane fade" id="social_media" role="tabpanel">
+                            @csrf
                             <div class="card">
                                 <div class="card-header">
                                     <h3 class="card-title">
@@ -159,9 +164,10 @@
                                     </h3>
                                 </div>
                                 <div class="card-body">
-                                    <form class="row g-3">
+                                    <form class="row g-3" method="POST" action="#">
+                                        @csrf
                                         <div class="col-md-12">
-                                            <label class="form-label" for="settings-name"> 
+                                            <label class="form-label" for="facebook"> 
                                                 Facebook
                                             </label>
                                             <input
@@ -172,7 +178,7 @@
                                             />
                                         </div>
                                         <div class="col-md-12">
-                                            <label class="form-label" for="settings-name"> 
+                                            <label class="form-label" for="instagram"> 
                                                 Instagram
                                             </label>
                                             <input
@@ -183,7 +189,7 @@
                                             />
                                         </div>
                                         <div class="col-md-12">
-                                            <label class="form-label" for="settings-name"> 
+                                            <label class="form-label" for="tiktok"> 
                                                 TikTok
                                             </label>
                                             <input
@@ -194,7 +200,7 @@
                                             />
                                         </div>
                                         <div class="col-md-12">
-                                            <label class="form-label" for="settings-name"> 
+                                            <label class="form-label" for="whatsapp"> 
                                                 Whatsapp
                                             </label>
                                             <input
@@ -202,6 +208,17 @@
                                                 class="form-control"
                                                 id="settings-email"
                                                 value="https://Whatsapp.com"
+                                            />
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label class="form-label" for="maps"> 
+                                                Google Maps
+                                            </label>
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="settings-email"
+                                                value="https://googlemaps.com"
                                             />
                                         </div>
                                         <div class="col-12">
@@ -215,7 +232,7 @@
                         </div>
 
                         <!-- Logotipos -->
-                        <div class="tab-pane fade" id="security" role="tabpanel">
+                        <div class="tab-pane fade" id="logo" role="tabpanel">
                             <div class="card">
                                 <div class="card-header">
                                     <h3 class="card-title">
@@ -223,7 +240,7 @@
                                     </h3>
                                 </div>
                                 <div class="card-body">
-                                    <form class="row g-3">
+                                    <form class="row g-3" method="POST" action="#">
                                         <div class="col-md-12">
                                             <label 
                                                 class="form-label" 
@@ -244,6 +261,7 @@
 
                     </div>
                 </div>
+                {{-- Tabla Fin --}}
             </div>
         </div>
     </div>
