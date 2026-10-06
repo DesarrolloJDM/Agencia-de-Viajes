@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Review;
+use App\Enums\ReviewStatus;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -22,7 +23,7 @@ class UserReviewSeeder extends Seeder
                 'user_image_path' => 'images/nosotros-1.png',
                 'message' => 'La mejor experiencia en viaje, me ayudaron a organizar un viaje de ensueño, sin duda la mejor agencia.',
                 'rate' => '1',
-                'is_active' => 1,
+                'status' => ReviewStatus::Pending,
             ],
         );
     }

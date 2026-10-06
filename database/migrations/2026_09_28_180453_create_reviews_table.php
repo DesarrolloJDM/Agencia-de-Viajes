@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('user_image_path', 100);
             $table->string('message', 255);
             $table->string('rate', 1)->default('1');
-            $table->boolean('is_active')->default(1);
+            $table->string('status')->default('pending');
             $table->string('created_at')->timestamps();
             $table->string('updated_at')->timestamps();
         });

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\ReviewStatus;
 use Database\Factories\ReviewFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -32,7 +33,7 @@ class Review extends Model
             'image_path' => 'string',
             'message' => 'string',
             'rate' => 'string',
-            'is_active' => 'boolean',
+            'status' => ReviewStatus::class,
             'updated_at' => 'datetime',
         ];
     }
