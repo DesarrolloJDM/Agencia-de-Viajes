@@ -62,86 +62,101 @@
                                     </h3>
                                 </div>
                                 <div class="card-body">
-                                    <form class="row g-3" method="POST" action="#">
+                                    <form 
+                                        class="row g-3" 
+                                        method="POST" 
+                                        action="{{ route('admin.settings.general.update') }}"
+                                    >
                                         @csrf
+                                        @method('PUT')
                                         <div class="col-md-6">
-                                            <label class="form-label" for="email"> 
+                                            <label class="form-label" for="settings-email"> 
                                                 Correo Electronico 
                                             </label>
                                             <input
                                                 type="email"
-                                                class="form-control"
-                                                id="email"
                                                 name="email"
-                                                value="correo@correo.com"
+                                                id="settings-email"
+                                                class="form-control @error('email') is-invalid @enderror"
+                                                value="{{ old('email', $settings->email) }}"
                                             />
+
+                                            @error('email')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                         <div class="col-md-6">
-                                            <label class="form-label" for="phone"> 
+                                            <label class="form-label" for="settings-phone"> 
                                                 Teléfono
                                             </label>
                                             <input
                                                 type="text"
-                                                class="form-control"
-                                                id="phone"
                                                 name="phone"
-                                                value="(656) 123-4567"
+                                                id="settings-phone"
+                                                class="form-control"
+                                                value="{{ old('phone', $settings->phone) }}"
                                             />
                                         </div>
                                         <div class="col-md-6">
-                                            <label class="form-label" for="street"> 
+                                            <label class="form-label" for="settings-street"> 
                                                 Calle
                                             </label>
                                             <input
                                                 type="text"
-                                                class="form-control"
-                                                id="street"
                                                 name="street"
-                                                value="Av. Principal"
+                                                id="settings-street"
+                                                class="form-control"
+                                                value="{{ old('street', $settings->street) }}"
                                             />
                                         </div>
                                         <div class="col-md-3">
-                                            <label class="form-label" for="street_number"> 
+                                            <label class="form-label" for="settings-number"> 
                                                 Número
                                             </label>
                                             <input
                                                 type="text"
+                                                name="street_number"
+                                                id="settings-number"
                                                 class="form-control"
-                                                id="street_number"
-                                                value="1234"
+                                                value="{{ old('street_number', $settings->street_number) }}"
                                             />
                                         </div>
                                         <div class="col-md-3">
-                                            <label class="form-label" for="postal_code"> 
+                                            <label class="form-label" for="settings-postal-code"> 
                                                 Código Postal
                                             </label>
                                             <input
                                                 type="text"
+                                                name="postal_code"
+                                                id="settings-postal-code"
                                                 class="form-control"
-                                                id="postal_code"
-                                                value="12345"
+                                                value="{{ old('postal_code', $settings->postal_code) }}"
                                             />
                                         </div>
                                         <div class="col-md-6">
-                                            <label class="form-label" for="city"> 
+                                            <label class="form-label" for="settings-city"> 
                                                 Ciudad
                                             </label>
                                             <input
                                                 type="text"
+                                                name="city"
+                                                id="settings-city"
                                                 class="form-control"
-                                                id="city"
-                                                value="Ciudad Juárez"
+                                                value="{{ old('city', $settings->city) }}"
                                             />
                                         </div>
                                         <div class="col-md-6">
-                                            <label class="form-label" for="state"> 
+                                            <label class="form-label" for="settings-state"> 
                                                 Estado
                                             </label>
                                             <input
                                                 type="text"
+                                                name="state"
+                                                id="settings-state"
                                                 class="form-control"
-                                                id="state"
-                                                value="Chihuahua"
+                                                value="{{ old('state', $settings->state) }}"
                                             />
                                         </div>
                                         <div class="col-12">
@@ -167,57 +182,62 @@
                                     <form class="row g-3" method="POST" action="#">
                                         @csrf
                                         <div class="col-md-12">
-                                            <label class="form-label" for="facebook"> 
+                                            <label class="form-label" for="facebook_url"> 
                                                 Facebook
                                             </label>
                                             <input
                                                 type="text"
                                                 class="form-control"
-                                                id="settings-email"
+                                                id="facebook_url"
+                                                name="facebook_url"
                                                 value="https://facebook.com"
                                             />
                                         </div>
                                         <div class="col-md-12">
-                                            <label class="form-label" for="instagram"> 
+                                            <label class="form-label" for="instagram_url"> 
                                                 Instagram
                                             </label>
                                             <input
                                                 type="text"
                                                 class="form-control"
-                                                id="settings-email"
+                                                id="instagram_url"
+                                                name="instagram_url"
                                                 value="https://instagram.com"
                                             />
                                         </div>
                                         <div class="col-md-12">
-                                            <label class="form-label" for="tiktok"> 
+                                            <label class="form-label" for="tiktok_url"> 
                                                 TikTok
                                             </label>
                                             <input
                                                 type="text"
                                                 class="form-control"
-                                                id="settings-email"
+                                                id="tiktok_url"
+                                                name="tiktok_url"
                                                 value="https://tiktok.com"
                                             />
                                         </div>
                                         <div class="col-md-12">
-                                            <label class="form-label" for="whatsapp"> 
+                                            <label class="form-label" for="whatsapp_url"> 
                                                 Whatsapp
                                             </label>
                                             <input
                                                 type="text"
                                                 class="form-control"
-                                                id="settings-email"
+                                                id="whatsapp_url"
+                                                name="whatsapp_url"
                                                 value="https://Whatsapp.com"
                                             />
                                         </div>
                                         <div class="col-md-12">
-                                            <label class="form-label" for="maps"> 
+                                            <label class="form-label" for="google_maps_url"> 
                                                 Google Maps
                                             </label>
                                             <input
                                                 type="text"
                                                 class="form-control"
-                                                id="settings-email"
+                                                id="google_maps_url"
+                                                name="google_maps_url"
                                                 value="https://googlemaps.com"
                                             />
                                         </div>
@@ -241,6 +261,7 @@
                                 </div>
                                 <div class="card-body">
                                     <form class="row g-3" method="POST" action="#">
+                                        @csrf
                                         <div class="col-md-12">
                                             <label 
                                                 class="form-label" 

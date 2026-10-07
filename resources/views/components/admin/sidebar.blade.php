@@ -89,7 +89,7 @@
         {{-- Seccion Configuración Inicio --}}
         <li class="nav-item">
           <a 
-            href="{{ route('settings') }}" 
+            href="{{ route('admin.settings.index') }}" 
             class="nav-link">
             <i class="nav-icon bi bi-wrench-adjustable"></i>
             <p>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Public\UserReviewController;
@@ -17,34 +18,45 @@ Route::post('/logout', [LoginController::class, 'destroy'])->middleware('auth')-
 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function(){
     Route::view('/dashboard', 'admin.dashboard')->name('dashboard');
+    
+    // Users
     Route::resource('usuarios', UserController::class)->parameters([
         'usuarios' => 'user',
     ])->names('users');
+
+    // Settings
+    Route::get('/configuracion', [SettingController::class, 'index'])->name('settings.index');
+    Route::put('/configuracion/general', [SettingController::class, 'updateGeneral'])->name('settings.general.update');
+    Route::put('/configuracion/redes-sociales', [SettingController::class, 'updateSocialMedia'])->name('settings.general.update');
+    Route::put('/configuracion/logotipo', [SettingController::class, 'updateLogo'])->name('settings.logo.update');
+
+
 });
 
-// Route::get('/admin/usuarios', function(){
-//     return view('admin.users');
-// })->name('users');
-
-// Route::get('/login', function(){
-//     return view('auth.login');
-// })->name('login');
-
-// Route::get('/admin/dashboard', function (){
-//     return view('admin.dashboard');
-// })->name('dashboard');
-
-// Route::get('/admin/usuarios', function(){
-//     return view('admin.users');
-// })->name('users');
 
 Route::get('/admin/reseñas', function (){
     return view('admin.reviews');
-})->name('reviews');
-
-Route::get('/admin/configuracion', function(){
-    return view('admin.settings');
-})->name('settings');
-
-
+    })->name('reviews');
+    
 Route::get('/reviews', [UserReviewController::class, 'index'])->name('review');
+    
+    // Route::get('/admin/usuarios', function(){
+    //     return view('admin.users');
+    // })->name('users');
+    
+    // Route::get('/login', function(){
+    //     return view('auth.login');
+    // })->name('login');
+    
+    // Route::get('/admin/dashboard', function (){
+    //     return view('admin.dashboard');
+    // })->name('dashboard');
+    
+    // Route::get('/admin/usuarios', function(){
+    //     return view('admin.users');
+    // })->name('users');
+    
+    // Route::get('/admin/configuracion', function(){
+    //     return view('admin.settings');
+    // })->name('settings');
+    
