@@ -171,7 +171,6 @@
 
                         <!-- Redes Sociales -->
                         <div class="tab-pane fade" id="social_media" role="tabpanel">
-                            @csrf
                             <div class="card">
                                 <div class="card-header">
                                     <h3 class="card-title">
@@ -179,68 +178,43 @@
                                     </h3>
                                 </div>
                                 <div class="card-body">
-                                    <form class="row g-3" method="POST" action="#">
+                                    <form 
+                                        class="row g-3" 
+                                        method="POST" 
+                                        action="{{ route('admin.settings.social.update') }}"
+                                    >
                                         @csrf
-                                        <div class="col-md-12">
-                                            <label class="form-label" for="facebook_url"> 
-                                                Facebook
-                                            </label>
-                                            <input
-                                                type="text"
-                                                class="form-control"
-                                                id="facebook_url"
-                                                name="facebook_url"
-                                                value="https://facebook.com"
-                                            />
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label class="form-label" for="instagram_url"> 
-                                                Instagram
-                                            </label>
-                                            <input
-                                                type="text"
-                                                class="form-control"
-                                                id="instagram_url"
-                                                name="instagram_url"
-                                                value="https://instagram.com"
-                                            />
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label class="form-label" for="tiktok_url"> 
-                                                TikTok
-                                            </label>
-                                            <input
-                                                type="text"
-                                                class="form-control"
-                                                id="tiktok_url"
-                                                name="tiktok_url"
-                                                value="https://tiktok.com"
-                                            />
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label class="form-label" for="whatsapp_url"> 
-                                                Whatsapp
-                                            </label>
-                                            <input
-                                                type="text"
-                                                class="form-control"
-                                                id="whatsapp_url"
-                                                name="whatsapp_url"
-                                                value="https://Whatsapp.com"
-                                            />
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label class="form-label" for="google_maps_url"> 
-                                                Google Maps
-                                            </label>
-                                            <input
-                                                type="text"
-                                                class="form-control"
-                                                id="google_maps_url"
-                                                name="google_maps_url"
-                                                value="https://googlemaps.com"
-                                            />
-                                        </div>
+                                        @method('PUT')
+
+                                        @php
+                                            $socialNetworks = [
+                                                'facebook_url' => 'Facebook',
+                                                'instagram_url' => 'Instagram',
+                                                'tiktok_url' => 'Tiktok',
+                                                'whatsapp_url' => 'Whatsapp',
+                                                'google_maps_url' => 'Google Maps',
+                                            ];
+                                        @endphp
+
+                                        @foreach ($socialNetworks as $field => $label)
+                                            <div class="col-md-12">
+                                                <label class="form-label" for="{{ $field }}"> 
+                                                    {{ $label }}
+                                                </label>
+                                                <input
+                                                    type="url"
+                                                    name="{{ $field }}"
+                                                    id="{{ $field }}"
+                                                    class="form-control @error($field) is-invalid @enderror"
+                                                    value="{{ old($field, $settings->{$field}) }}"
+                                                />
+                                            </div>
+
+                                            @error($field)
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        @endforeach
+
                                         <div class="col-12">
                                             <button type="submit" class="btn btn-primary">
                                                 Guardar Cambios
@@ -251,7 +225,7 @@
                             </div>
                         </div>
 
-                        <!-- Logotipos -->
+                        <!-- Logotipo -->
                         <div class="tab-pane fade" id="logo" role="tabpanel">
                             <div class="card">
                                 <div class="card-header">

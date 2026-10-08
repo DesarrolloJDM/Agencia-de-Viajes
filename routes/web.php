@@ -27,7 +27,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function(){
     // Settings
     Route::get('/configuracion', [SettingController::class, 'index'])->name('settings.index');
     Route::put('/configuracion/general', [SettingController::class, 'updateGeneral'])->name('settings.general.update');
-    Route::put('/configuracion/redes-sociales', [SettingController::class, 'updateSocialMedia'])->name('settings.general.update');
+    Route::put('/configuracion/redes-sociales', [SettingController::class, 'updateSocialMedia'])->name('settings.social.update');
     Route::put('/configuracion/logotipo', [SettingController::class, 'updateLogo'])->name('settings.logo.update');
 
 
