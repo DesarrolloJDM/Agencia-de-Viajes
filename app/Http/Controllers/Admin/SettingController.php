@@ -84,7 +84,7 @@ class SettingController extends Controller
         }
 
         $settings->update([
-            'logo->path' => $newLogoPath,
+            'logo_path' => $newLogoPath,
         ]);
 
         return back()->with(

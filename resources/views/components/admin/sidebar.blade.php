@@ -29,7 +29,7 @@
         <li class="nav-item">
           <a 
             href="{{ route('admin.dashboard') }}" 
-            class="nav-link active"
+            class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}"
           >
             <i class="nav-icon bi bi-speedometer"></i>
             <p>
@@ -90,7 +90,8 @@
         <li class="nav-item">
           <a 
             href="{{ route('admin.settings.index') }}" 
-            class="nav-link">
+            class="nav-link {{ request()->routeIs('admin.settings.*') ? 'active' : '' }}"
+          >
             <i class="nav-icon bi bi-wrench-adjustable"></i>
             <p>
               Configuración
@@ -103,7 +104,7 @@
         <li class="nav-item">
           <a 
             href="{{ route('admin.users.index') }}" 
-            class="nav-link"
+            class="nav-link {{ request()->routeIs('admin.users.*') ? 'active' : '' }}"
           >
             <i class="nav-icon bi bi-people-fill"></i>
             <p>

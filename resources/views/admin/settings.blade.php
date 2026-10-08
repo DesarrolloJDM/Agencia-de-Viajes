@@ -52,6 +52,11 @@
 
                 {{-- Tabla Inicio --}}
                 <div class="col-md-9">
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                     <div class="tab-content">
                         <!-- Datos Generales -->
                         <div class="tab-pane fade show active" id="general" role="tabpanel">
@@ -230,19 +235,52 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h3 class="card-title">
-                                        Logotipos
+                                        Logotipo
                                     </h3>
                                 </div>
                                 <div class="card-body">
-                                    <form class="row g-3" method="POST" action="#">
+                                    <form 
+                                        class="row g-3" 
+                                        method="POST" 
+                                        action="{{ route('admin.settings.logo.update') }}"
+                                        enctype="multipart/form-data"
+                                    >
                                         @csrf
+                                        @method('PUT')
                                         <div class="col-md-12">
-                                            <label 
-                                                class="form-label" 
-                                                for="pwd-current"
-                                            > 
+                                            <label class="form-label"> 
                                                 Imagen Actual
                                             </label>
+
+                                            @if($settings->logo_path)
+                                                <div class="mb-3">
+                                                    <img 
+                                                        src="{{ asset('storage/' . $settings->logo_path) }}" 
+                                                        alt="Logotipo de Viaja tus Sueños"
+                                                        style="max-width: 220px; max-height: 120px;"
+                                                    >
+                                                </div>
+                                            @else
+                                                <p class="text-muted">Aún no hay un logotipo</p>
+                                            @endif
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <label class="form-label" for="logo">
+                                                Nuevo logotipo
+                                            </label>
+
+                                            <input 
+                                                type="file"
+                                                name="logo"
+                                                id="logo"
+                                                accept=".jpg,.jpeg,.png,.webp"
+                                                class="form-control @error('logo') is-invalid @enderror"
+                                            >
+
+                                            @error('logo')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="col-12">
                                             <button type="submit" class="btn btn-primary">
