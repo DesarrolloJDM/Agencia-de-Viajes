@@ -2,7 +2,9 @@
 
 @section('main')
   <main class="app-main">
-    <x-admin.title title="Usuarios" />
+    <x-admin.title 
+      title="Usuarios" 
+    />
         
     {{-- Inicio App Content--> --}}
     <div class="app-content">

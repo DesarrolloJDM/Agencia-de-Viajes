@@ -36,7 +36,15 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function(){
 
 Route::get('/admin/reseñas', function (){
     return view('admin.reviews');
-    })->name('reviews');
+})->name('reviews');
+
+Route::get('/admin/destinos', function (){
+    return view('admin.destinations');
+})->name('destinations');
+
+Route::get('/admin/crear_destino', function (){
+    return view('admin.destination-add');
+})->name('destination-add');
     
 Route::get('/reviews', [UserReviewController::class, 'index'])->name('review');
     

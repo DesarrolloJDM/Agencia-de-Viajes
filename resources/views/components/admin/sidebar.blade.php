@@ -52,7 +52,10 @@
 
         {{-- Seccion Destinos Inicio --}}
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a 
+            href="{{ route('destinations') }}" 
+            class="nav-link"
+          >
             <i class="nav-icon bi bi-globe-americas"></i>
             <p>
               Destinos
