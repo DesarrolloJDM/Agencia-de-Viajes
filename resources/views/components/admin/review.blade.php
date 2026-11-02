@@ -1,6 +1,6 @@
 <div class="col-md-6">
     <div class="card card-secondary card-outline mb-4">
-        <form method="POST" action="{{ route('change.status.review', $review->id) }}" >
+        <form method="POST" action="{{ route('admin.change.status.review', $review->id) }}" >
             @csrf
             @method('PUT')
             <div class="card-header">
@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary" name="status" value="accepted">Aprobar</button>
+                <button type="submit" class="btn btn-success" name="status" value="accepted">Aprobar</button>
                 <button type="submit" class="btn btn-danger" name="status" value="rejected">Rechazar</button>
             </div>
         </form>
