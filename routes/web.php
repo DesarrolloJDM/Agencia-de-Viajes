@@ -30,10 +30,16 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function(){
     Route::put('/configuracion/general', [SettingController::class, 'updateGeneral'])->name('settings.general.update');
     Route::put('/configuracion/redes-sociales', [SettingController::class, 'updateSocialMedia'])->name('settings.social.update');
     Route::put('/configuracion/logotipo', [SettingController::class, 'updateLogo'])->name('settings.logo.update');
+
+    Route::get('/reseñas', [AdminReviewController::class, 'index'])->name('reviews');
+    Route::put('/reseñas/{id}', [AdminReviewController::class, 'changeStatus'])->name('change.status.review');
 });
 
-Route::get('/admin/reseñas', [AdminReviewController::class, 'index'])->name('reviews');
-Route::put('/admin/reseñas/{id}', [AdminReviewController::class, 'changeStatus'])->name('change.status.review');
+// Route::get('/admin/reseñas', [AdminReviewController::class, 'index'])->name('reviews');
+// Route::get('/admin/reseñas/pendientes', [AdminReviewController::class, 'getPendingReviews'])->name('get.pending.reviews');
+// Route::get('/admin/reseñas/aceptadas', [AdminReviewController::class, 'getAcceptedReviews'])->name('get.accepted.reviews');
+// Route::get('/admin/reseñas/rechazadas', [AdminReviewController::class, 'getRejectedReviews'])->name('get.rejected.reviews');
+// Route::put('/admin/reseñas/{id}', [AdminReviewController::class, 'changeStatus'])->name('change.status.review');
 
 Route::get('/admin/destinos', function (){
     return view('admin.destinations');

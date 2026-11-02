@@ -9,15 +9,17 @@
             </h2>
             
             <div class="d-flex flex-wrap justify-content-md-end gap-2">
-                <button
-                    type="button"
-                    class="btn btn-sm vs-btn style4"
-                    data-bs-toggle="modal"
-                    data-bs-target="#modal-add-review"
-                >
-                    <i class="bi bi-person-plus-fill me-1" aria-hidden="true"> </i>
-                    Agregar Reseña
-                </button>
+                @guest
+                    <button
+                        type="button"
+                        class="btn btn-sm vs-btn style4"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal-add-review"
+                    >
+                        <i class="bi bi-person-plus-fill me-1" aria-hidden="true"> </i>
+                        Agregar Reseña
+                    </button>
+                @endguest
             </div>
 
             <div class="container pt-5">

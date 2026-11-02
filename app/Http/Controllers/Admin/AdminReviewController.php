@@ -31,7 +31,7 @@ class AdminReviewController extends Controller
             ));  
     }
 
-    private function getTotalCount()
+    public static function getTotalCount()
     {
         return Review::all()->count();
     }
@@ -50,6 +50,24 @@ class AdminReviewController extends Controller
     {
         return Review::query()->where('status', ReviewStatus::Rejected)->get()->count();
     }
+
+    // public function getPendingReviews()
+    // {
+    //     $PendingReviews = UserReviewController::getPendingReviews();
+    //     return view('admin.reviews', compact('PendingReviews'));
+    // }
+
+    // public function getAcceptedReviews()
+    // {
+    //     $AcceptedReviews = UserReviewController::getAcceptedReviews();
+    //     return view('admin.reviews', compact('AcceptedReviews'));
+    // }
+
+    // public function getRejectedReviews()
+    // {
+    //     $RejectedReviews = UserReviewController::getRejectedReviews();
+    //     return view('admin.reviews', compact('RejectedReviews'));
+    // }
 
     public function changeStatus(Request $request, $id)
     {

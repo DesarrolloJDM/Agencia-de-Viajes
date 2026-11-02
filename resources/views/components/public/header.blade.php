@@ -38,7 +38,12 @@
                     <a href="#">Contacto</a>
                 </li>
                 <li>
-                    <a href="{{ route('login') }}">Iniciar Sesión</a>
+                    @auth
+                        <a href="{{ route('admin.dashboard') }}">Dashboard</a>
+                    @endauth
+                    @guest
+                        <a href="{{ route('login') }}">Iniciar Sesión</a>
+                    @endguest
                 </li>
             </ul>
         </div>
@@ -133,7 +138,12 @@
                                     <a href="#">Contacto</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('login') }}">Iniciar Sesión</a>
+                                    @auth
+                                        <a href="{{ route('admin.dashboard') }}">Dashboard</a>
+                                    @endauth
+                                    @guest
+                                        <a href="{{ route('login') }}">Iniciar Sesión</a>
+                                    @endguest
                                 </li>
                             </ul>
                         </nav>
