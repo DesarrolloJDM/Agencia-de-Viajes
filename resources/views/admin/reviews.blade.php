@@ -3,6 +3,9 @@
 @section('main')
   <main class="app-main">
     <x-admin.title title="Reseñas" />
+    {{-- @php
+        $totalReviewsAccepted = App\Http\Controllers\Admin\AdminReviewController::getAllAcceptedReviews();
+    @endphp --}}
         
     {{-- Inicio App Content--> --}}
     <div class="app-content">
@@ -21,7 +24,7 @@
                                 Pendientes
                             </span>
                             <span class="info-box-number">
-                                10
+                                {{ $totalPendingReviews }}
                             </span>
                         </div>
                     </div>
@@ -37,7 +40,7 @@
                                 Aprobadas
                             </span>
                             <span class="info-box-number">
-                                10
+                                {{ $totalAcceptedReviews }}
                             </span>
                         </div>
                     </div>
@@ -53,7 +56,7 @@
                                 No Aprobadas
                             </span>
                             <span class="info-box-number">
-                                10
+                                {{ $totalRejectedReviews }}
                             </span>
                         </div>
                     </div>
@@ -69,7 +72,7 @@
                                 Total
                             </span>
                             <span class="info-box-number">
-                                30
+                                {{ $totalReviews }}
                             </span>
                         </div>
                     </div>    
@@ -79,10 +82,15 @@
             {{-- Widget Fin --}}
 
             <div class="row g-4">
-                <x-admin.review />
-                <x-admin.review />
-                <x-admin.review />
-                <x-admin.review />
+                @if($totalPendingReviews)
+                    @foreach($PendingReviews as $PendingReview)
+                        <x-admin.review :review="$PendingReview" />
+                    @endforeach
+                @else
+                    <h2 class="sec-title h2">
+                        Sin reseñas pendientes...
+                    </h2>
+                @endif
             </div>
 
       </div>

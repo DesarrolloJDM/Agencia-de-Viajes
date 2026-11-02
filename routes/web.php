@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\AdminReviewController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Public\UserReviewController;
@@ -29,14 +30,10 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function(){
     Route::put('/configuracion/general', [SettingController::class, 'updateGeneral'])->name('settings.general.update');
     Route::put('/configuracion/redes-sociales', [SettingController::class, 'updateSocialMedia'])->name('settings.social.update');
     Route::put('/configuracion/logotipo', [SettingController::class, 'updateLogo'])->name('settings.logo.update');
-
-
 });
 
-
-Route::get('/admin/reseñas', function (){
-    return view('admin.reviews');
-})->name('reviews');
+Route::get('/admin/reseñas', [AdminReviewController::class, 'index'])->name('reviews');
+Route::put('/admin/reseñas/{id}', [AdminReviewController::class, 'changeStatus'])->name('change.status.review');
 
 Route::get('/admin/destinos', function (){
     return view('admin.destinations');
@@ -47,6 +44,11 @@ Route::get('/admin/crear_destino', function (){
 })->name('destination-add');
     
 Route::get('/reviews', [UserReviewController::class, 'index'])->name('review');
+Route::post('/reviews', [UserReviewController::class, 'addReview'])->name('addreview');
+
+Route::get('/internationaltravels', function (){
+    return view('components.public.internationalsection');    
+})->name('international');
     
     // Route::get('/admin/usuarios', function(){
     //     return view('admin.users');

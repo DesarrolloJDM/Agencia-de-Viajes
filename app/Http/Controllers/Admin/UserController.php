@@ -13,9 +13,7 @@ class UserController extends Controller
     {
         $users = User::query()->latest()->paginate(10);
 
-        return view('admin.users', [
-            'users' => $users,
-        ]);
+        return view('admin.users', compact('users'));
     }
 
     /**

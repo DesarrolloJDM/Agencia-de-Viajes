@@ -11,13 +11,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Notifications\Notifiable;
 
 #[Fillable([
- 'image_path',
- 'user_image_path',
- 'message',
+ 'username',
+ 'comment',
  'rate',
- 'is_active'  
+ 'status'  
 ])]
 
+#[Table('reviews')]
 class Review extends Model
 {
     use HasFactory, Notifiable;
@@ -30,10 +30,11 @@ class Review extends Model
     protected function casts(): array 
     {
         return [
-            'image_path' => 'string',
-            'message' => 'string',
+            'username' => 'string',
+            'comment' => 'string',
             'rate' => 'string',
             'status' => ReviewStatus::class,
+            'created_at' => 'datetime',
             'updated_at' => 'datetime',
         ];
     }

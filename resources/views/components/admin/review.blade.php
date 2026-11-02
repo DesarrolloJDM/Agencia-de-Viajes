@@ -1,52 +1,56 @@
 <div class="col-md-6">
     <div class="card card-secondary card-outline mb-4">
-        <div class="card-header">
-            <div class="card-title">
-                Reseña
+        <form method="POST" action="{{ route('change.status.review', $review->id) }}" >
+            @csrf
+            @method('PUT')
+            <div class="card-header">
+                <div class="card-title">
+                    Reseña
+                </div>
             </div>
-        </div>
-        <div class="card-body">
-            <div class="form-floating mb-3">
-                <input
-                    type="text"
-                    class="form-control"
-                    id="floatingEmail"
-                    value="Jesus Lechuga"
-                />
-                <label for="floatingEmail">
-                    Nombre:
-                </label>
+            <div class="card-body">
+                <div class="form-floating mb-3">
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="floatingEmail"
+                        value="{{ $review->username }}"
+                        readonly
+                    />
+                    <label for="floatingEmail"> 
+                        Usuario
+                    </label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="floatingPwd"
+                        value="{{ $review->rate }} Estrella(s)"
+                        readonly
+                    />
+                    <label for="floatingPwd">
+                        Calificación
+                    </label>
+                </div>
+                <div class="form-floating">
+                    <textarea
+                        class="form-control"
+                        id="floatingTextarea"
+                        style="height: 6rem"
+                        readonly
+                    >
+                        {{ $review->comment }}
+                    </textarea>
+                    <label for="floatingTextarea">
+                        Comentario:
+                    </label>
+                </div>
             </div>
-            <div class="form-floating mb-3">
-                <input
-                    type="text"
-                    class="form-control"
-                    id="floatingPwd"
-                    value="5 Estrellas"
-                />
-                <label for="floatingPwd">
-                    Calificación
-                </label>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary" name="status" value="accepted">Aprobar</button>
+                <button type="submit" class="btn btn-danger" name="status" value="rejected">Rechazar</button>
             </div>
-            <div class="form-floating">
-                <textarea
-                    class="form-control"
-                    id="floatingTextarea"
-                    style="height: 6rem"
-                >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eius, 
-                    reiciendis dolorum est blanditiis nesciunt quas culpa quibusdam 
-                    consequuntur, nobis nulla vero architecto asperiores? Ullam ipsum 
-                    necessitatibus assumenda quia quam.
-                </textarea>
-                <label for="floatingTextarea">
-                    Comentario
-                </label>
-            </div>
-        </div>
-        <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Aprobar</button>
-            <button type="submit" class="btn btn-danger">Desaprobar</button>
-        </div>
+        </form>
     </div>
 </div>
