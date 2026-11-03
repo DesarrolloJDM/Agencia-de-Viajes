@@ -3,7 +3,7 @@
     <strong>
     Desarrollado por:
     <a href="#" class="text-decoration-none">
-      Juarezdigimark
+      {{-- Juarezdigimark --}}
     </a>
   </strong>
   </div>

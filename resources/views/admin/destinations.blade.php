@@ -9,6 +9,13 @@
 
 {{-- Inicio App Content --}}
 <div class="app-content">
+    {{-- Alerta Inicio --}}
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+    {{-- Alerta Fin --}}
     <div class="container-fluid">
         {{-- Inicio Widget --}}
         <div class="row">
@@ -51,7 +58,7 @@
                                         <option value="city">Ciudad</option>
                                     </select>
                                     <a
-                                        href="{{ route('destination-add') }}"
+                                        href="{{ route('admin.destinos.create') }}"
                                         class="btn btn-sm btn-primary"
                                     >
                                         <i class="bi bi-plus me-1" aria-hidden="true"> </i>
@@ -80,29 +87,41 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @forelse ($destinations as $destination)
                                     <tr>
                                         <td>
-                                            Italia    
+                                            {{ $destination->name }}    
                                         </td>
                                         <td>
-                                            Pais
+                                            {{ ucfirst($destination->type) }}
                                         </td>
                                         <td>
-                                            Europa
+                                            {{ $destination->parent?->name ?? '-' }}
                                         </td>
                                         <td>
-                                            7
+                                            0
                                         </td>
                                         <td>
-                                            User Test
+                                            @if($destination->creator)
+                                                {{ $destination->creator->name }}
+                                                {{ $destination->creator->last_name }}
+                                            @else
+                                                Usuario Eliminado
+                                            @endif
                                         </td>
                                         <td>
-                                            Mar 12, 2025
+                                            {{ $destination->created_at->format('d/m/Y') }}
                                         </td>
                                         <td>
-                                            <span class="badge text-bg-success">
-                                                Activo
-                                            </span>
+                                            @if ($destination->is_active)
+                                                <span class="badge text-bg-success">
+                                                    Activo            
+                                                </span>
+                                            @else
+                                                <span class="badge text-bg-secondary">
+                                                    Inactivo            
+                                                </span>
+                                            @endif
                                         </td>
                                         <td class="text-end">
                                             <div class="btn-group btn-group-sm">
@@ -134,51 +153,13 @@
                                             </div>
                                         </td>
                                     </tr>
+                                    @empty
                                     <tr>
-                                        <td>
-                                            Ontario    
-                                        </td>
-                                        <td>
-                                            Ciudad
-                                        </td>
-                                        <td>
-                                            Canadá
-                                        </td>
-                                        <td>
-                                            3
-                                        </td>
-                                        <td>
-                                            User Test
-                                        </td>
-                                        <td>
-                                            Mar 12, 2025
-                                        </td>
-                                        <td>
-                                            <span class="badge text-bg-success">
-                                                Activo
-                                            </span>
-                                        </td>
-                                        <td class="text-end">
-                                            <div class="btn-group btn-group-sm">
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-outline-secondary"
-                                                    aria-label="#"
-                                                >
-                                                    <i class="bi bi-pencil" aria-hidden="true"> </i>
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-outline-danger"
-                                                    data-bs-toggle="modal"
-                                                    data-bs-target="#modal-delete"
-                                                    aria-label="#"
-                                                >
-                                                    <i class="bi bi-trash" aria-hidden="true"> </i>
-                                                </button>
-                                            </div>
+                                        <td colspan="8" class="text-center py-4">
+                                            No hay destinos registrados.
                                         </td>
                                     </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
                         </div>
@@ -187,32 +168,7 @@
 
                     {{-- Inicio Tabla Footer --}}
                     <div class="card-footer clearfix">
-                        <div class="float-start pt-1 fs-7 text-body-secondary">
-                            Mostrando 1 de 9 de 42 destinos
-                        </div>
-                        <ul class="pagination pagination-sm m-0 float-end">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#" aria-label="Previous"> &laquo; </a>
-                            </li>
-                            <li class="page-item active">
-                                <a class="page-link" href="#">1</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">2</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">3</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">4</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">5</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next"> &raquo; </a>
-                            </li>
-                        </ul>
+                        {{ $destinations->links() }}
                     </div>
                     {{-- FIn Tabla Footer --}}
                 </div>

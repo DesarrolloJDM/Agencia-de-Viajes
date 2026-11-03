@@ -87,7 +87,7 @@
                         </a>.
                         Desarrollada por
                         <a href="#">
-                            Juarezdigimark
+                            {{-- Juarezdigimark --}}
                         </a>
                     </p>
                 </div>

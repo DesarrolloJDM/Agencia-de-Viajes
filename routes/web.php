@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DestinationController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
@@ -18,6 +19,11 @@ Route::post('/logout', [LoginController::class, 'destroy'])->middleware('auth')-
 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function(){
     Route::view('/dashboard', 'admin.dashboard')->name('dashboard');
+
+    // Destination
+    Route::resource('destinos', DestinationController::class)->parameters([
+        'destinos' => 'destination',
+    ])->only(['index', 'create', 'store']);
     
     // Users
     Route::resource('usuarios', UserController::class)->parameters([
@@ -38,13 +44,13 @@ Route::get('/admin/reseñas', function (){
     return view('admin.reviews');
 })->name('reviews');
 
-Route::get('/admin/destinos', function (){
-    return view('admin.destinations');
-})->name('destinations');
+// Route::get('/admin/destinos', function (){
+//     return view('admin.destinations');
+// })->name('destinations');
 
-Route::get('/admin/crear_destino', function (){
-    return view('admin.destination-add');
-})->name('destination-add');
+// Route::get('/admin/crear_destino', function (){
+//     return view('admin.destination-add');
+// })->name('destination-add');
     
 Route::get('/reviews', [UserReviewController::class, 'index'])->name('review');
     

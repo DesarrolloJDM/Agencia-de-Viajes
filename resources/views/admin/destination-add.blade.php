@@ -18,7 +18,13 @@
             </div>
             <div class="card-body">
                 {{-- Formulario Inicio --}}
-                <form class="row g-3">
+                <form 
+                    class="row g-3"
+                    method="POST"
+                    action="{{ route('admin.destinos.store') }}"
+                    enctype="multipart/form-data"
+                >
+                    @csrf
                     <div class="col-4">
                         <label class="form-label" for="name">
                             Destino
@@ -27,38 +33,97 @@
                             type="text"
                             id="name"
                             name="name"
-                            class="form-control"
+                            class="form-control @error('name') is-invalid @enderror"
+                            value="{{ old('name') }}"
                             placeholder="Ej. Italia"
                         />
+
+                        @error('name')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
+
                     <div class="col-md-4">
                         <label class="form-label" for="type">
                             Tipo
                         </label>
                         <select
                             id="type"
-                            class=" form-select"
+                            name="type"
+                            class="form-select @error('type') is-invalid @enderror"
                         >
-                            <option selected>-- Seleccionar --</option>
-                            <option value="continent">Continente</option>
-                            <option value="country">Pais</option>
-                            <option value="region">Región</option>
-                            <option value="state">Estado</option>
-                            <option value="city">Ciudad</option>
+                            <option value="">-- Seleccionar --</option>
+                            <option 
+                                value="continente"
+                                @selected(old('type') === 'continente')
+                            >
+                                Continente
+                            </option>
+                            <option 
+                                value="pais"
+                                @selected(old('type') === 'pais')
+                            >
+                                Pais
+                            </option>
+                            <option 
+                                value="region"
+                                @selected(old('type') === 'region')
+                            >
+                                Región
+                            </option>
+                            <option 
+                                value="estado"
+                                @selected(old('type') === 'estado')
+                            >
+                                Estado
+                            </option>
+                            <option 
+                                value="ciudad"
+                                @selected(old('type') === 'ciudad')
+                            >
+                                Ciudad
+                            </option>
                         </select>
+
+                        @error('type')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
+
                     <div class="col-md-4">
-                        <label class="form-label" for="belongs">
+                        <label class="form-label" for="parent_id">
                             Pertenece a
                         </label>
-                        <input 
-                            type="text"
-                            name="belongs" 
-                            id="belongs" 
-                            class="form-control" 
-                            placeholder="Ej. Europa"
-                        />
+
+                        <select 
+                            id="parent_id"
+                            name="parent_id"
+                            class="form-select @error('parent_id') is-invalid @enderror" 
+                        >
+                            <option value="">Ninguno</option>
+
+                            @foreach ($possibleParent as $parent)
+                                <option 
+                                    value="{{ $parent->id }}"
+                                    @selected(old('parent_id') == $parent->id)
+                                >
+                                    {{ $parent->name }} - {{ ucfirst($parent->type) }}
+                                </option>
+                            @endforeach
+                        </select>
+
+                        @error('parent_id')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                        
                     </div>
+
                     <div class="col-12">
                         <label class="form-label" for="description">
                             Descripción
@@ -66,46 +131,54 @@
                         <textarea
                             id="description"
                             name="description"
-                            class="form-control"
+                            class="form-control @error('description') is-invalid @enderror"
                             rows="12"
                             placeholder="Descubre Italia, un destino fascinante donde..."
                             style="min-height: 16rem"
-                        ></textarea>
+                        >
+                            {{ old('description') }}
+                        </textarea>
                     </div>
                     <div class="form-check form-switch">
                         <input
                             class="form-check-input"
                             type="checkbox"
                             role="switch"
-                            id="featured-destination"
-                            name="featured-destination"
+                            id="is_featured"
+                            name="is_featured"
+                            value="1"
+                            @checked(old('is_featured'))
                         />
-                        <label class="form-label" for="featured-destination">
+                        <label class="form-label" for="is_featured">
                             Destino destacado
                         </label>
                     </div>
                     <div class="col-6">
-                        <label class="form-label" for="image-destination">
+                        <label class="form-label" for="image">
                             Imagen (Recomendado: 581x660 px)
                         </label>
                         <input 
-                            type="file" 
-                            class="form-control" 
-                            id="image-destination" 
+                            type="file"
+                            name="image"
+                            id="image"
+                            accept=".jpg,.jpeg,.png,.webp" 
+                            class="form-control @error('image') is-invalid @enderror"  
                         />
                     </div>
                     <div class="col-6">
-                        <label class="form-label" for="pdf-destination">
+                        <label class="form-label" for="pdf">
                             PDF
                         </label>
                         <input 
-                            type="file" 
-                            class="form-control" 
-                            id="pdf-destination" 
+                            type="file"
+                            name="pdf"
+                            id="pdf"
+                            accept=".pdf" 
+                            class="form-control @error('pdf') is-invalid @enderror" 
                         />
                     </div>
                     <div class="col-3">
-                        <button class="btn btn-primary" type="button">
+                        <button class="btn btn-primary" type="submit">
                             <i class="bi bi-plus me-1" aria-hidden="true"></i>
                             Crear
                         </button>
@@ -115,7 +188,7 @@
             </div>
             <div class="card-footer d-flex gap-2">
                 <a 
-                    href="{{ route('destinations') }}"
+                    href="{{ route('admin.destinos.index') }}"
                     class="btn btn-outline-danger ms-auto"
                 >
                     <i class="bi bi-x-lg me-1" aria-hidden="true"></i>

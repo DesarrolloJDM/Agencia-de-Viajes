@@ -53,7 +53,7 @@
         {{-- Seccion Destinos Inicio --}}
         <li class="nav-item">
           <a 
-            href="{{ route('destinations') }}" 
+            href="{{ route('admin.destinos.index') }}" 
             class="nav-link"
           >
             <i class="nav-icon bi bi-globe-americas"></i>
