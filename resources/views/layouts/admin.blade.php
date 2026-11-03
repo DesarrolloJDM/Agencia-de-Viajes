@@ -100,9 +100,11 @@
     />
 </head>
     <body class="layout-fixed fixed-header fixed-footer sidebar-expand-lg bg-body-tertiary">
-        <x-admin.header />
-        <x-admin.sidebar />
-            @yield('main')
-        <x-admin.footer />
+        @auth
+            <x-admin.header />
+            <x-admin.sidebar />
+                @yield('main')
+            <x-admin.footer />
+        @endauth
     </body>
 </html>

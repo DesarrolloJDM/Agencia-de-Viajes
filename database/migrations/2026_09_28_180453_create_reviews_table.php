@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->string('image_path', 100);
-            $table->string('user_image_path', 100);
-            $table->string('message', 255);
+            // $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            // $table->string('image_path', 100);
+            // $table->string('user_image_path', 100);
+            $table->string('username', 100);
+            $table->string('comment', 255);
             $table->string('rate', 1)->default('1');
             $table->string('status')->default('pending');
             $table->string('created_at')->timestamps();

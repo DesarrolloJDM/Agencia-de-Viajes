@@ -70,7 +70,7 @@
                                     <form 
                                         class="row g-3" 
                                         method="POST" 
-                                        action="{{ route('admin.settings.general.update') }}"
+                                        action="{{ route('admin.settings.general.update') }}" 
                                     >
                                         @csrf
                                         @method('PUT')

@@ -19,7 +19,7 @@ class SettingController extends Controller
     }
 
     // Actualizar Datos Generales
-    public function updateGeneral(Request $request): RedirectResponse
+    public function updateGeneral(Request $request): RedirectResponse 
     {
         $validated = $request->validate([
             'email' => ['nullable', 'email', 'max:255'],

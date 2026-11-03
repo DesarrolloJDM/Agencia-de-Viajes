@@ -78,8 +78,8 @@
         {{-- Seccion Reseñas Inicio --}}
         <li class="nav-item">
           <a 
-            href="{{ route('reviews') }}" 
-            class="nav-link"
+            href="{{ route('admin.reviews') }}" 
+            class="nav-link {{ request()->routeIs('admin.reviews.*') ? 'active' : '' }}"
           >
             <i class="nav-icon bi bi-star-fill"></i>
             <p>

@@ -89,7 +89,7 @@
                 ></path>
               </svg>
               <a
-                href="{{ route('reviews') }}"
+                href="{{ route('admin.reviews') }}"
                 class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
               >
                 Ver 
@@ -120,8 +120,8 @@
                 ></path>
               </svg>
               <a
-                href="#"
-                class="small-box-footer link-dark link-underline-opacity-0 link-underline-opacity-50-hover"
+                href="{{ route('destinations') }}"
+                class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
               >
                 Ver 
                 <i class="bi bi-link-45deg"></i>

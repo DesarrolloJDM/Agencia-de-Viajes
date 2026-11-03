@@ -6,7 +6,7 @@
         </div>
         <div class="vs-mobile-menu">
             <ul>
-                <li class="menu-item-has-children">
+                <li>
                     <a href={{ route('home') }}>
                         Inicio
                     </a>
@@ -31,14 +31,19 @@
                     <ul class="sub-menu">
                         <li><a href="#">Super Promos! 🔥🔥</a></li>
                         <li><a href="#">Nacional</a></li>
-                        <li><a href="#">Internacional</a></li>
+                        <li><a href="{{ route('international') }}">Internacional</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#">Contacto</a>
                 </li>
                 <li>
-                    <a href="{{ route('login') }}">Iniciar Sesión</a>
+                    @auth
+                        <a href="{{ route('admin.dashboard') }}">Dashboard</a>
+                    @endauth
+                    @guest
+                        <a href="{{ route('login') }}">Iniciar Sesión</a>
+                    @endguest
                 </li>
             </ul>
         </div>
@@ -101,7 +106,7 @@
                     <div class="col text-end text-xl-center">
                         <nav class="main-menu  menu-style1 d-none d-lg-block">
                             <ul>
-                                <li class="menu-item-has-children">
+                                <li>
                                     <a href={{ route('home') }}>
                                         Inicio
                                     </a>
@@ -114,7 +119,7 @@
                                         <li><a href="{{ route('review') }}">Reseñas</a></li>
                                     </ul>
                                 </li>
-                                <li class="menu-item-has-children mega-menu-wrap">
+                                <li class="menu-item-has-childrenp">
                                     <a href="#">
                                         Destinos
                                     </a>
@@ -126,14 +131,19 @@
                                     <ul class="sub-menu">
                                         <li><a href="#">Super Promos! 🔥🔥</a></li>
                                         <li><a href="#">Nacional</a></li>
-                                        <li><a href="#">Internacional</a></li>
+                                        <li><a href="{{ route('international') }}">Internacional</a></li>
                                     </ul>
                                 </li>
                                 <li>
                                     <a href="#">Contacto</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('login') }}">Iniciar Sesión</a>
+                                    @auth
+                                        <a href="{{ route('admin.dashboard') }}">Dashboard</a>
+                                    @endauth
+                                    @guest
+                                        <a href="{{ route('login') }}">Iniciar Sesión</a>
+                                    @endguest
                                 </li>
                             </ul>
                         </nav>

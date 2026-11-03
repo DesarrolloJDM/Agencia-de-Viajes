@@ -14,16 +14,14 @@ class UserReviewSeeder extends Seeder
      */
     public function run(): void
     {
-        Review::firstOrCreate(
+        Review::create(
             [
-                'user_id' => 1,
+                'id' => 1,
             ],
             [
-                'image_path' => 'images/paquete-3.png',
-                'user_image_path' => 'images/nosotros-1.png',
-                'message' => 'La mejor experiencia en viaje, me ayudaron a organizar un viaje de ensueño, sin duda la mejor agencia.',
-                'rate' => '1',
-                'status' => ReviewStatus::Pending,
+                'username' => 'Jane Doe',
+                'comment' => 'De las mejores agencias para viajar, excelentes precios y buen catalogo de promociones.',
+                'rate' => '5',
             ],
         );
     }
