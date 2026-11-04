@@ -39,6 +39,31 @@
         </li>
         {{-- Seccion Dashboard Fin --}}
 
+        {{-- Seccion Destinos Inicio --}}
+        <li class="nav-item">
+          <a 
+            href="{{ route('admin.destinos.index') }}" 
+            class="nav-link {{ request()->routeIs('admin.destinos.*') ? 'active' : '' }}"
+          >
+            <i class="nav-icon bi bi-globe-americas"></i>
+            <p>
+              Destinos
+            </p>
+          </a>
+        </li>
+        {{-- Seccion Destinos Fin --}}
+
+        {{-- Seccion Paquetes Inicio --}}
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon bi bi-luggage"></i>
+            <p>
+              Paquetes
+            </p>
+          </a>
+        </li>
+        {{-- Seccion Paquetes Fin --}}
+
         {{-- Seccion Ofertas Inicio --}}
         <li class="nav-item">
           <a href="#" class="nav-link">
@@ -49,24 +74,13 @@
           </a>
         </li>
         {{-- Seccion Ofertas Fin --}}
-
-        {{-- Seccion Destinos Inicio --}}
-        <li class="nav-item">
-          <a 
-            href="{{ route('admin.destinos.index') }}" 
-            class="nav-link"
-          >
-            <i class="nav-icon bi bi-globe-americas"></i>
-            <p>
-              Destinos
-            </p>
-          </a>
-        </li>
-        {{-- Seccion Destinos Fin --}}
-
+  
         {{-- Seccion Proveedores Inicio --}}
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a 
+            href="{{ route('admin.proveedores.index') }}" 
+            class="nav-link {{ request()->routeIs('admin.proveedores.*') ? 'active' : '' }}"
+          >
             <i class="nav-icon bi bi-airplane-fill"></i>
             <p>
               Proveedores

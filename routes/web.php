@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DestinationController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\AdminReviewController;
+use App\Http\Controllers\Admin\SupplierController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Public\UserReviewController;
@@ -25,6 +26,11 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function(){
     Route::resource('destinos', DestinationController::class)->parameters([
         'destinos' => 'destination',
     ])->only(['index', 'create', 'store']);
+
+    // Suppliers
+    Route::resource('proveedores', SupplierController::class)->parameters([
+        'proveedores' => 'supplier',
+    ])->only(['index', 'store', 'update', 'destroy']);
     
     // Users
     Route::resource('usuarios', UserController::class)->parameters([
@@ -81,4 +87,6 @@ Route::get('/internationaltravels', function (){
     // Route::get('/admin/configuracion', function(){
     //     return view('admin.settings');
     // })->name('settings');
+
+
     

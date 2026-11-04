@@ -40,8 +40,8 @@
                                             type="search"
                                             id="user-search"
                                             class="form-control"
-                                            placeholder="Search users"
-                                            aria-label="Search users"
+                                            placeholder="Buscar Destinos"
+                                            aria-label="Buscar Destinos"
                                             style="width: 180px"
                                         />
                                     </div>
@@ -51,11 +51,11 @@
                                         aria-label="Filter by role"
                                     >
                                         <option value="all" selected>Todos los Tipos</option>
-                                        <option value="continent">Continente</option>
-                                        <option value="country">Pais</option>
+                                        <option value="continente">Continente</option>
+                                        <option value="pais">Pais</option>
                                         <option value="region">Región</option>
-                                        <option value="state">Estado</option>
-                                        <option value="city">Ciudad</option>
+                                        <option value="estado">Estado</option>
+                                        <option value="ciudad">Ciudad</option>
                                     </select>
                                     <a
                                         href="{{ route('admin.destinos.create') }}"
@@ -88,77 +88,77 @@
                                 </thead>
                                 <tbody>
                                     @forelse ($destinations as $destination)
-                                    <tr>
-                                        <td>
-                                            {{ $destination->name }}    
-                                        </td>
-                                        <td>
-                                            {{ ucfirst($destination->type) }}
-                                        </td>
-                                        <td>
-                                            {{ $destination->parent?->name ?? '-' }}
-                                        </td>
-                                        <td>
-                                            0
-                                        </td>
-                                        <td>
-                                            @if($destination->creator)
-                                                {{ $destination->creator->name }}
-                                                {{ $destination->creator->last_name }}
-                                            @else
-                                                Usuario Eliminado
-                                            @endif
-                                        </td>
-                                        <td>
-                                            {{ $destination->created_at->format('d/m/Y') }}
-                                        </td>
-                                        <td>
-                                            @if ($destination->is_active)
-                                                <span class="badge text-bg-success">
-                                                    Activo            
-                                                </span>
-                                            @else
-                                                <span class="badge text-bg-secondary">
-                                                    Inactivo            
-                                                </span>
-                                            @endif
-                                        </td>
-                                        <td class="text-end">
-                                            <div class="btn-group btn-group-sm">
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-outline-secondary"
-                                                    aria-label="#"
-                                                >
-                                                    <i class="bi bi-eye" aria-hidden="true"> </i>
-                                                </button>
+                                        <tr>
+                                            <td>
+                                                {{ $destination->name }}    
+                                            </td>
+                                            <td>
+                                                {{ ucfirst($destination->type) }}
+                                            </td>
+                                            <td>
+                                                {{ $destination->parent?->name ?? '-' }}
+                                            </td>
+                                            <td>
+                                                0
+                                            </td>
+                                            <td>
+                                                @if($destination->creator)
+                                                    {{ $destination->creator->name }}
+                                                    {{ $destination->creator->last_name }}
+                                                @else
+                                                    Usuario Eliminado
+                                                @endif
+                                            </td>
+                                            <td>
+                                                {{ $destination->created_at->format('d/m/Y') }}
+                                            </td>
+                                            <td>
+                                                @if ($destination->is_active)
+                                                    <span class="badge text-bg-success">
+                                                        Activo            
+                                                    </span>
+                                                @else
+                                                    <span class="badge text-bg-secondary">
+                                                        Inactivo            
+                                                    </span>
+                                                @endif
+                                            </td>
+                                            <td class="text-end">
+                                                <div class="btn-group btn-group-sm">
+                                                    <button
+                                                        type="button"
+                                                        class="btn btn-outline-secondary"
+                                                        aria-label="#"
+                                                    >
+                                                        <i class="bi bi-eye" aria-hidden="true"> </i>
+                                                    </button>
 
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-outline-secondary"
-                                                    aria-label="#"
-                                                >
-                                                    <i class="bi bi-pencil" aria-hidden="true"> </i>
-                                                </button>
-                                                
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-outline-danger"
-                                                    data-bs-toggle="modal"
-                                                    data-bs-target="#modal-delete"
-                                                    aria-label="#"
-                                                >
-                                                    <i class="bi bi-trash" aria-hidden="true"> </i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                                    <button
+                                                        type="button"
+                                                        class="btn btn-outline-secondary"
+                                                        aria-label="#"
+                                                    >
+                                                        <i class="bi bi-pencil" aria-hidden="true"> </i>
+                                                    </button>
+                                                    
+                                                    <button
+                                                        type="button"
+                                                        class="btn btn-outline-danger"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#modal-delete"
+                                                        aria-label="#"
+                                                    >
+                                                        <i class="bi bi-trash" aria-hidden="true"> </i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
                                     @empty
-                                    <tr>
-                                        <td colspan="8" class="text-center py-4">
-                                            No hay destinos registrados.
-                                        </td>
-                                    </tr>
+                                        <tr>
+                                            <td colspan="8" class="text-center py-4">
+                                                No hay destinos registrados.
+                                            </td>
+                                        </tr>
                                     @endforelse
                                 </tbody>
                             </table>
@@ -180,26 +180,4 @@
 {{-- Fin App Content --}}
        
 </main>
-
-{{-- 
-
-Formulario
-- nombre (destino)
-- tipo: continente, pais, region, estado, ciudad
-- pertenece a
-- descripcion
-- cover image
-- destino destacado
-
-
-Tabla
-- Destino
-- Tipo
-- Pertenece a 
-- Paquetes #
-- Estado
-- Creado por
-- Acciones
-
---}}
 @endsection

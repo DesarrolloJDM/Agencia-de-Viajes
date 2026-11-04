@@ -120,7 +120,7 @@
                 ></path>
               </svg>
               <a
-                href="{{ route('destinations') }}"
+                href="{{ route('admin.destinos.index') }}"
                 class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
               >
                 Ver 
