@@ -9,13 +9,9 @@
 
 {{-- Inicio App Content --}}
 <div class="app-content">
-    {{-- Alerta Inicio --}}
-    @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
-    {{-- Alerta Fin --}}
+
+    <x-admin.alerta />
+    
     <div class="container-fluid">
         {{-- Inicio Widget --}}
         <div class="row">
@@ -137,7 +133,7 @@
 
                     {{-- Inicio Tabla Footer --}}
                     <div class="card-footer clearfix">
-                        {{ $destinations->links() }}
+                        {{ $suppliers->links() }}
                     </div>
                     {{-- FIn Tabla Footer --}}
                 </div>

@@ -52,4 +52,12 @@ class User extends Authenticatable
     {
         return "{$this->name} {$this->last_name}";
     }
+
+    public function createdTravelPackages(): HasMany
+    {
+        return $this->hasMany(
+            TravelPackage::class,
+            'created_by'
+        );
+    }
 }

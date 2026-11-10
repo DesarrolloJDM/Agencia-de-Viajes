@@ -87,8 +87,8 @@
                     <div id="ptw-container" class="row">
                         <script 
                             type="text/javascript" 
-                            src="https://widgets.priceres.com.mx/travel-agencyweb/jsonpBooker/startWidget?container=ptw-container&UseConfigs=false&WhiteLabelId=viaja-tus-sueños">
-                        </script>
+                            src="https://widgets.priceres.com.mx/travel-agencyweb/jsonpBooker/startWidget?container=ptw-container&UseConfigs=false&WhiteLabelId=viaja-tus-sueños"
+                        ></script>
                     </div>
                 </section>
             </div>

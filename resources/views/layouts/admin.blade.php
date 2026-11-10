@@ -106,5 +106,6 @@
                 @yield('main')
             <x-admin.footer />
         @endauth
+        @stack('scripts')
     </body>
 </html>

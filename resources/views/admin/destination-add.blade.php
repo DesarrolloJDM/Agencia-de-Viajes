@@ -38,11 +38,10 @@
                             placeholder="Ej. Italia"
                         />
 
-                        @error('name')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
+                        <x-admin.alerta-input
+                            name="name"
+                        />
+
                     </div>
 
                     <div class="col-md-4">
@@ -87,11 +86,9 @@
                             </option>
                         </select>
 
-                        @error('type')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
+                        <x-admin.alerta-input
+                            name="type"
+                        />
                     </div>
 
                     <div class="col-md-4">
@@ -116,11 +113,9 @@
                             @endforeach
                         </select>
 
-                        @error('parent_id')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
+                        <x-admin.alerta-input
+                            name="parent_id"
+                        />
                         
                     </div>
 

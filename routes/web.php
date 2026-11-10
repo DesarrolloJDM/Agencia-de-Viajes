@@ -1,9 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminReviewController;
 use App\Http\Controllers\Admin\DestinationController;
 use App\Http\Controllers\Admin\SettingController;
-use App\Http\Controllers\Admin\AdminReviewController;
 use App\Http\Controllers\Admin\SupplierController;
+use App\Http\Controllers\Admin\TravelPackageController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Public\UserReviewController;
@@ -27,6 +28,10 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function(){
         'destinos' => 'destination',
     ])->only(['index', 'create', 'store']);
 
+    Route::resource('paquetes', TravelPackageController::class)->parameters([
+        'paquetes' => 'travelPackage',
+    ])->only(['index','create','store','destroy',]);
+
     // Suppliers
     Route::resource('proveedores', SupplierController::class)->parameters([
         'proveedores' => 'supplier',
@@ -47,46 +52,30 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function(){
     Route::put('/reseñas/{id}', [AdminReviewController::class, 'changeStatus'])->name('change.status.review');
 });
 
-// Route::get('/admin/reseñas', [AdminReviewController::class, 'index'])->name('reviews');
-// Route::get('/admin/reseñas/pendientes', [AdminReviewController::class, 'getPendingReviews'])->name('get.pending.reviews');
-// Route::get('/admin/reseñas/aceptadas', [AdminReviewController::class, 'getAcceptedReviews'])->name('get.accepted.reviews');
-// Route::get('/admin/reseñas/rechazadas', [AdminReviewController::class, 'getRejectedReviews'])->name('get.rejected.reviews');
-// Route::put('/admin/reseñas/{id}', [AdminReviewController::class, 'changeStatus'])->name('change.status.review');
 
-// Route::get('/admin/destinos', function (){
-//     return view('admin.destinations');
-// })->name('destinations');
-
-// Route::get('/admin/crear_destino', function (){
-//     return view('admin.destination-add');
-// })->name('destination-add');
-    
 Route::get('/reviews', [UserReviewController::class, 'index'])->name('review');
 Route::post('/reviews', [UserReviewController::class, 'addReview'])->name('addreview');
 
 Route::get('/internationaltravels', function (){
     return view('components.public.internationalsection');    
-})->name('international');
+    })->name('international');
     
-    // Route::get('/admin/usuarios', function(){
-    //     return view('admin.users');
-    // })->name('users');
-    
-    // Route::get('/login', function(){
-    //     return view('auth.login');
-    // })->name('login');
-    
-    // Route::get('/admin/dashboard', function (){
-    //     return view('admin.dashboard');
-    // })->name('dashboard');
-    
-    // Route::get('/admin/usuarios', function(){
-    //     return view('admin.users');
-    // })->name('users');
+    // Route::get('/admin/reseñas', [AdminReviewController::class, 'index'])->name('reviews');
+    // Route::get('/admin/reseñas/pendientes', [AdminReviewController::class, 'getPendingReviews'])->name('get.pending.reviews');
+    // Route::get('/admin/reseñas/aceptadas', [AdminReviewController::class, 'getAcceptedReviews'])->name('get.accepted.reviews');
+    // Route::get('/admin/reseñas/rechazadas', [AdminReviewController::class, 'getRejectedReviews'])->name('get.rejected.reviews');
+    // Route::put('/admin/reseñas/{id}', [AdminReviewController::class, 'changeStatus'])->name('change.status.review');
     
     // Route::get('/admin/configuracion', function(){
-    //     return view('admin.settings');
-    // })->name('settings');
-
-
-    
+        //     return view('admin.settings');
+        // })->name('settings');
+        
+        // Route::get('/admin/paquetes', function(){
+        //     return view('admin.packages');
+        // })->name('packages');
+        
+        // Route::get('/admin/paquetes/crear', function(){
+        //     return view('admin.packages-add');
+        // })->name('packages-add');
+        
+        

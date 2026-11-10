@@ -16,9 +16,6 @@ class UserReviewSeeder extends Seeder
     {
         Review::create(
             [
-                'id' => 1,
-            ],
-            [
                 'username' => 'Jane Doe',
                 'comment' => 'De las mejores agencias para viajar, excelentes precios y buen catalogo de promociones.',
                 'rate' => '5',

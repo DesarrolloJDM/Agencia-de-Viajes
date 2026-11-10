@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 #[Fillable([
@@ -58,4 +59,19 @@ class Destination extends Model
             'created_by'
         );
     }
+
+    public function travelPackages(): BelongsToMany
+    {
+        return $this->belongsToMany(TravelPackage::class)
+            ->withPivot('sort_order')
+            ->withTimestamps();
+    }
+
+public function packagesOriginatingHere(): HasMany
+{
+    return $this->hasMany(
+        TravelPackage::class,
+        'origin_city_id'
+    );
+}
 }

@@ -20,8 +20,7 @@ return new class extends Migration
             $table->string('comment', 255);
             $table->string('rate', 1)->default('1');
             $table->string('status')->default('pending');
-            $table->string('created_at')->timestamps();
-            $table->string('updated_at')->timestamps();
+            $table->timestamps();
         });
     }
 
